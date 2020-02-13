@@ -4,7 +4,7 @@
 }
 
 body {
-	font-family: 'Lato', sans-serif;
+	font-family: 'Lato Regular', sans-serif;
 }
 
 .container {
@@ -22,6 +22,7 @@ body {
 }
 
 .header__logo {
+	font-family: 'Lato Bold', sans-serif;
 	font-size: 25px;
 	color: #ffffff;
 	font-weight: 700;
@@ -36,10 +37,11 @@ body {
 }
 
 .nav {
+	font-family: 'Lato Bold', sans-serif;
 	margin-top: 5px;
 }
 
-.nav__list__link {
+.nav__link {
 	position: relative;
 	font-size: 12px;
 	color: white;
@@ -52,7 +54,7 @@ body {
 	transition: color 0.2s linear;
 }
 
-.nav__list__link:not(:last-child):after {
+.nav__link:not(:last-child):after {
 	content: "";
 	background-color: #494e62;
 	width: 3px;
