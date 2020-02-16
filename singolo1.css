@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-	max-width: 1020px;
+	max-width: 940px;
 	padding: 0 40px;
 	margin: 0 auto;
 }
@@ -53,7 +53,7 @@ body {
 	text-transform: uppercase;
 	font-weight: 700;
 	margin-left: 26px;
-	letter-spacing: -0.006em;
+	letter-spacing: -0.008em;
 
 	transition: color 0.1s linear;
 }
@@ -163,6 +163,7 @@ nav a:hover {
 	font-family: 'Lato Black', sans-serif;
 	font-size: 18px;
 	margin-bottom: 8px;
+	letter-spacing: -0.006em;
 }
 
 .services__subtitle {
