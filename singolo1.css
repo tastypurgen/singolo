@@ -118,10 +118,11 @@ nav a:hover {
 
 .services {
 	color: #666d89;
+	background: #f2f2f2;
 }
 
 .services__name {
-	margin: 59px 0 18px;
+	padding: 59px 0 18px;
 	font-family: 'Lato Black', sans-serif;
 	font-size: 30px;
 	letter-spacing: -0.01em;
