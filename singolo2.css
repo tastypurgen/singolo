@@ -14,7 +14,7 @@
 	color: #666d89;
 }
 
-.portfolio__title {
+.section__title {
 	font-family: 'Lato Black', sans-serif;
 	font-size: 30px;
 	padding-top: 60px;
@@ -22,11 +22,12 @@
 	padding: 60px 40px 10px;
 }
 
-.portfolio__description {
+.section__description {
 	font-family: 'Lato Light', sans-serif;
 	font-size: 18px;
 	padding: 8px 40px 0;
 	line-height: 30px;
+	text-align: justify;
 }
 
 .portfolio__tags {
@@ -42,19 +43,71 @@
 	margin-right: 7px;
 }
 
+.portfolio__tag-active {
+	border: 1px solid #c5c5c5;
+	color: #c5c5c5;
+}
+
 .portfolio__works {
 	margin: 19px 0 0 40px;
+	padding-bottom: 52px;
 }
 
 .layout-4-column {
 	display: flex;
 	flex-wrap: wrap;
 }
+
 .portfolio__work {
 	width: calc( (100% - 20px) / 4);
 	margin: 0 0 18px;
 }
+
 .work {
 	width: 220px;
 	height: 186px;
+}
+
+.about-us__content {
+	background: #f2f2f2;
+
+	padding-bottom: 46px;
+}
+
+.about-us__people {
+	display: flex;
+	flex-wrap: wrap;
+
+	margin: 45px 0 0 40px;
+}
+
+.about-us__item {
+	width: calc( (100% - 20px) / 3);
+
+	margin-bottom: 18px;
+	padding-right: 20px;
+}
+
+.about-us__name {
+	font-family: 'Lato Black', sans-serif;
+	font-size: 18px;
+	letter-spacing: -0.01em;
+
+	margin: 12px 0 0 -1px;
+}
+
+.about-us__description {
+	font-size: 12px;
+	text-align: justify;
+	margin-top: 8px;
+	line-height: 22px;
+}
+
+.about-us__social {
+	margin: 23px 0 0 0px;
+}
+
+.icon {
+	color: #666d89;
+	margin: 0px 5px 0 0px;
 }
