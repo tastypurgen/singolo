@@ -25,14 +25,25 @@
 		</div>
 	</header>
 
-	<div id="slider" class="slider">
-		<div class="container">
-			<div class="slider__inner">
+	<div class="slider">
+		<div class="slider-container">
+			<div id="slider" class="slider__inner">
 				<img class="img phone-ver" src="assets/img/phone_ver.png" alt="">
+				<img class="img phone-ver phone-ver-off hidden" src="assets/img/phone_ver_off.png" alt="">
 				<img class="img phone-hor" src="assets/img/phone_hor.png" alt="">
+				<img class="img phone-hor phone-hor-off hidden" src="assets/img/phone_hor_off.png" alt="">
 				<img class="img arrow left" src="assets/img/left.png" alt="">
 				<img class="img arrow right" src="assets/img/right.png" alt="">
 			</div>
+
+			<div id="slider-blue" class="slider-blue hidden">
+				<img class="img phone-1" src="assets/img/phone2tr.png" alt="">
+				<img class="img phone-2" src="assets/img/phone2.png" alt="">
+				<img class="img phone-3" src="assets/img/phone2tr.png" alt="">
+				<img class="img arrow left" src="assets/img/left.png" alt="">
+				<img class="img arrow right" src="assets/img/right.png" alt="">
+			</div>
+
 		</div>
 	</div>
 
@@ -84,14 +95,14 @@
 				<div class="section__title">Portfolio</div>
 				<p class="section__description">Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 				<div class="portfolio__tags">
-					<span class="portfolio__tag portfolio__tag-active">All</span>
+					<span class="portfolio__tag tag-active">All</span>
 					<span class="portfolio__tag">Web Design</span>
 					<span class="portfolio__tag">Graphic Design</span>
 					<span class="portfolio__tag">Artwork</span>
 				</div>
 
 				<div class="portfolio__works">
-					<div class="layout-4-column">
+					<div id="works" class="layout-4-column">
 						<div class="portfolio__work">
 							<img src="assets/img/portfolio/1.jpg" alt="" class="work">
 						</div>
@@ -124,15 +135,6 @@
 						</div>
 						<div class="portfolio__work">
 							<img src="assets/img/portfolio/11.jpg" alt="" class="work">
-						</div>
-						<div class="portfolio__work">
-							<img src="assets/img/portfolio/12.jpg" alt="" class="work">
-						</div>
-						<div class="portfolio__work">
-							<img src="assets/img/portfolio/12.jpg" alt="" class="work">
-						</div>
-						<div class="portfolio__work">
-							<img src="assets/img/portfolio/12.jpg" alt="" class="work">
 						</div>
 						<div class="portfolio__work">
 							<img src="assets/img/portfolio/12.jpg" alt="" class="work">
@@ -196,9 +198,9 @@
 					<form class="contact__inputs">
 						<input class="contact__input" type="text" name="name" placeholder="Name (Required)" required>
 						<input class="contact__input" type="email" name="email" placeholder="Email (Required)" required>
-						<input class="contact__input" type="text" name="subject" placeholder="Subject">
-						<textarea class="contact__input contact__input-text-area" name="details" id="" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
-						<input class="contact__btn" type="submit" value="Submit">
+						<input id="subject" class="contact__input" type="text" name="subject" placeholder="Subject">
+						<textarea id="description" class="contact__input contact__input-text-area" name="details" id="" cols="30" rows="10" placeholder="Describe your project in detail..."></textarea>
+						<input id="btn" class="contact__btn" type="submit" value="Submit">
 					</form>
 					<div class="contact__info">
 						<div class="contact__title">Contact Information</div>
@@ -217,6 +219,16 @@
 						</div>
 					</div>
 				</div>
+			</div>
+		</div>
+	</div>
+	<div id="alert" class="alert alert-hidden">
+		<div class="alert-msg">
+			<p>Письмо отправлено</p>
+			<p id="alert-topic">Без темы</p>
+			<p id="alert-text">Без описания</p>
+			<div style="text-align: center; margin-top: 10px;">
+				<button id="close-btn" class="contact__btn">OK</button>
 			</div>
 		</div>
 	</div>
