@@ -4,7 +4,9 @@ const headerInner = document.getElementById('header-inner')
 const nav = document.getElementById('nav')
 
 window.addEventListener('scroll', (e) => {
-	if (window.scrollY >= slider.scrollHeight) {
+	console.log('slider.scrollHeight :', slider.scrollHeight);
+	console.log('this.scrollY :', this.scrollY);
+	if (window.scrollY >= slider.scrollHeight + 7) {
 		header.classList.add('header-fixed')
 		slider.classList.add('slider-fixed')
 		headerInner.classList.add('header__inner-fixed')
@@ -47,7 +49,6 @@ horPhoneOff.addEventListener('click', () => {
 	horPhone.classList.remove('hidden')
 	horPhoneOff.classList.add('hidden')
 })
-
 
 arrows.forEach(arrow => {
 	arrow.addEventListener('click', () => {
@@ -122,4 +123,31 @@ document.querySelector('.contact__inputs').addEventListener('submit', e => {
 closeBtn.addEventListener('click', e => {
 	document.getElementById('alert').classList.add('alert-hidden')
 	e.preventDefault()
+})
+
+
+// active-swithcer
+window.addEventListener('scroll', () => {
+	const navLinks = nav.querySelectorAll('a')
+	const services = document.getElementById('services').offsetTop - 300
+	const portfolio = document.getElementById('portfolio').offsetTop - 300
+	const about = document.getElementById('about').offsetTop - 300
+	const contact = document.getElementById('contact').offsetTop - 300
+
+	navLinks.forEach(a => a.classList.remove('active'))
+	if (this.scrollY < services) {
+		navLinks[0].classList.add('active')
+	}
+	if (this.scrollY < portfolio && this.scrollY > services) {
+		navLinks[1].classList.add('active')
+	}
+	if (this.scrollY < about && this.scrollY > portfolio) {
+		navLinks[2].classList.add('active')
+	}
+	if (this.scrollY < contact && this.scrollY > about) {
+		navLinks[3].classList.add('active')
+	}
+	if (this.scrollY > contact) {
+		navLinks[4].classList.add('active')
+	}
 })
