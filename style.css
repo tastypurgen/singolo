@@ -135,10 +135,6 @@ nav a:hover {
 	position: relative;
 }
 
-.carousel-slide {
-	display: flex;
-}
-
 .slider-blue {
 	user-select: none;
 	position: absolute;
@@ -502,6 +498,22 @@ nav a:hover {
 }
 
 /* script */
+.slider-container {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+}
+
+.slide-active,
+.next {
+	display: block;
+}
+
+.next {
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
 
 .hidden {
 	display: none;

@@ -106,18 +106,20 @@ function shuffle(a) {
 }
 
 // CONTACT
+const form = document.querySelector('.contact__inputs')
 const btn = document.getElementById('btn')
 const closeBtn = document.getElementById('close-btn')
 const alertTopic = document.getElementById('alert-topic')
 const alertText = document.getElementById('alert-text')
 
-document.querySelector('.contact__inputs').addEventListener('submit', e => {
+form.addEventListener('submit', e => {
+	e.preventDefault()
 	const subject = document.getElementById('subject').value
 	const description = document.getElementById('description').value
 	if (subject) alertTopic.innerText = 'Тема: ' + subject
 	if (description) alertText.innerText = 'Описание: ' + description
 	document.getElementById('alert').classList.remove('alert-hidden')
-	e.preventDefault()
+	form.reset()
 })
 
 closeBtn.addEventListener('click', e => {
