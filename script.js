@@ -4,8 +4,6 @@ const headerInner = document.getElementById('header-inner')
 const nav = document.getElementById('nav')
 
 window.addEventListener('scroll', (e) => {
-	console.log('slider.scrollHeight :', slider.scrollHeight);
-	console.log('this.scrollY :', this.scrollY);
 	if (window.scrollY >= slider.scrollHeight + 7) {
 		header.classList.add('header-fixed')
 		slider.classList.add('slider-fixed')
@@ -33,6 +31,53 @@ const horPhone = document.querySelector('.phone-hor')
 const horPhoneOff = document.querySelector('.phone-hor-off')
 const arrows = document.querySelectorAll('.arrow')
 
+const slides = document.querySelectorAll('.slide-item')
+const left = document.querySelector('.left')
+const right = document.querySelector('.right')
+let currentSlide = 0
+let isEnabled = true
+
+function changeCurrentSlide(n) {
+	currentSlide = (n + slides.length) % slides.length
+}
+
+function hideItem(direction) {
+	isEnabled = false
+	slides[currentSlide].classList.add(direction)
+	slides[currentSlide].addEventListener('animationend', function () {
+		this.classList.remove('slide-active', direction)
+	})
+}
+
+function showItem(direction) {
+	slides[currentSlide].classList.add('next', direction)
+	slides[currentSlide].addEventListener('animationend', function () {
+		this.classList.remove('next', direction)
+		this.classList.add('slide-active')
+		isEnabled = true
+	})
+}
+
+function nextSlide(n) {
+	hideItem('to-left')
+	changeCurrentSlide(n + 1)
+	showItem('from-right')
+}
+
+function previousSlide(n) {
+	hideItem('to-right')
+	changeCurrentSlide(n - 1)
+	showItem('from-left')
+}
+
+left.addEventListener('click', function () {
+	if (isEnabled) previousSlide(currentSlide)
+})
+
+right.addEventListener('click', function () {
+	if (isEnabled) nextSlide(currentSlide)
+})
+
 verPhone.addEventListener('click', () => {
 	verPhone.classList.add('hidden')
 	verPhoneOff.classList.remove('hidden')
@@ -50,11 +95,11 @@ horPhoneOff.addEventListener('click', () => {
 	horPhoneOff.classList.add('hidden')
 })
 
-arrows.forEach(arrow => {
-	arrow.addEventListener('click', () => {
-		document.querySelector('#slider-blue').classList.toggle('hidden')
-	})
-})
+// arrows.forEach(arrow => {
+// 	arrow.addEventListener('click', () => {
+// 		document.querySelector('#slider-blue').classList.toggle('hidden')
+// 	})
+// })
 
 
 // PORTFOLIO
