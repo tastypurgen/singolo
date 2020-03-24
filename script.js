@@ -2,18 +2,19 @@
 const header = document.getElementById('header')
 const headerInner = document.getElementById('header-inner')
 const nav = document.getElementById('nav')
+const burger = document.getElementById('burger')
 
-window.addEventListener('scroll', (e) => {
-	if (window.scrollY >= slider.scrollHeight + 7) {
-		header.classList.add('header-fixed')
-		slider.classList.add('slider-fixed')
-		headerInner.classList.add('header__inner-fixed')
-	} else {
-		header.classList.remove('header-fixed')
-		slider.classList.remove('slider-fixed')
-		headerInner.classList.remove('header__inner-fixed')
-	}
-})
+// window.addEventListener('scroll', (e) => {
+// 	if (window.scrollY >= 100) {
+// 		header.classList.add('header-fixed')
+// 		slider.classList.add('slider-fixed')
+// 		headerInner.classList.add('header__inner-fixed')
+// 	} else {
+// 		header.classList.remove('header-fixed')
+// 		slider.classList.remove('slider-fixed')
+// 		headerInner.classList.remove('header__inner-fixed')
+// 	}
+// })
 
 nav.addEventListener('click', e => {
 	if (e.target != nav) {
@@ -176,25 +177,32 @@ closeBtn.addEventListener('click', e => {
 // active-swithcer
 window.addEventListener('scroll', () => {
 	const navLinks = nav.querySelectorAll('a')
+	const burgerLinks = burger.querySelectorAll('a')
 	const services = document.getElementById('services').offsetTop - 300
 	const portfolio = document.getElementById('portfolio').offsetTop - 300
 	const about = document.getElementById('about').offsetTop - 300
 	const contact = document.getElementById('contact').offsetTop - 300
 
 	navLinks.forEach(a => a.classList.remove('active'))
+	burgerLinks.forEach(a => a.classList.remove('active'))
 	if (this.scrollY < services) {
 		navLinks[0].classList.add('active')
+		burgerLinks[0].classList.add('active')
 	}
 	if (this.scrollY < portfolio && this.scrollY > services) {
 		navLinks[1].classList.add('active')
+		burgerLinks[1].classList.add('active')
 	}
 	if (this.scrollY < about && this.scrollY > portfolio) {
 		navLinks[2].classList.add('active')
+		burgerLinks[2].classList.add('active')
 	}
 	if (this.scrollY < contact && this.scrollY > about) {
 		navLinks[3].classList.add('active')
+		burgerLinks[3].classList.add('active')
 	}
 	if (this.scrollY > contact) {
 		navLinks[4].classList.add('active')
+		burgerLinks[4].classList.add('active')
 	}
 })
