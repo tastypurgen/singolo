@@ -206,3 +206,5 @@ window.addEventListener('scroll', () => {
 		burgerLinks[4].classList.add('active')
 	}
 })
+
+alert('Проверяй работы других так, как хотел чтобы проверяли твою \n \n (с) Джейсон Стэтхэм')
